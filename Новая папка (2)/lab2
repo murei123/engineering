@@ -1,1 +1,50 @@
+def menu
+loop do
+puts "Выберите задание:
+Слово наоборот: 1.
+Массив покемонов: 2.
+Выход из программы: -1"
 
+print "Введите номер: > "
+
+number = gets.to_i
+
+if number == 1
+task
+elsif number == 2
+pacemon
+elsif number == -1
+break
+end
+end
+
+end
+
+def task
+print "Введите ваше число и слово: > "
+name = gets.chomp
+word = name.split(" ")[1]
+if word[-2, word.length].downcase == "cs"
+puts 2**word.length
+else
+puts word.reverse
+end
+
+end
+def pacemon
+print "Введите количество покемонов: > "
+first = gets.to_i
+pokemons=[]
+i=0
+first.times do
+print "Введите имя покемона > "
+name = gets.chomp
+print "Введите цвет покемона: > "
+color = gets.chomp
+pokemons.append({'Name '=> name, 'color ' => color})
+
+end
+puts pokemons
+end
+
+menu
